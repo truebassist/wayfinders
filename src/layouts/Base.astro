@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -15,6 +17,7 @@ const { title, description = "A small, free, mentor-led cohort for UK Christians
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fdfcfa" />
     <title>{title}</title>
+    <Analytics />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -40,10 +43,6 @@ const { title, description = "A small, free, mentor-led cohort for UK Christians
         <p>&copy; {new Date().getFullYear()} Wayfinders &middot; <a href="/privacy">Privacy</a> &middot; <a href="/principles">Principles</a></p>
       </div>
     </footer>
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
   </body>
 </html>
 
