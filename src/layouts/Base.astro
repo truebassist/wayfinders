@@ -1,0 +1,184 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A small, free, mentor-led cohort for UK Christians making real mid-career decisions." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Wayfinders</a>
+        <div class="nav-links">
+          <a href="/principles">Principles</a>
+          <a href="/apply" class="nav-cta">Apply</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} Wayfinders &middot; <a href="/privacy">Privacy</a> &middot; <a href="/principles">Principles</a></p>
+        <p class="footer-contact">hello@wayfinders.org.uk</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-text: #1a1a1a;
+    --color-text-light: #555;
+    --color-bg: #fdfcfa;
+    --color-accent: #2c5f4a;
+    --color-accent-light: #e8f0ec;
+    --color-border: #e0ddd8;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Lora', Georgia, serif;
+    --max-width: 680px;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  h1 { font-size: 2rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+
+  p { margin-bottom: 1rem; }
+
+  a {
+    color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .nav {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-text-light);
+  }
+  .nav-links a:hover { color: var(--color-text); }
+
+  .nav-cta {
+    background: var(--color-accent);
+    color: white !important;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .nav-cta:hover { opacity: 0.9; }
+
+  main {
+    padding: 3rem 0;
+  }
+
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+  .footer a { color: var(--color-text-light); }
+  .footer-contact { margin-top: 0.25rem; }
+
+  .btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .btn:hover { opacity: 0.9; }
+
+  .highlight-box {
+    background: var(--color-accent-light);
+    border-left: 3px solid var(--color-accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>

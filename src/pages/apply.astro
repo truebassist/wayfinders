@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+
+const APPLY_URL = "#"; // Replace with live Google Form URL when ready
+---
+
+<Base title="Apply — Wayfinders" description="Apply for a Wayfinders cohort.">
+  <div class="container">
+    <h1>Apply</h1>
+
+    <div class="highlight-box">
+      <p style="margin-bottom: 0.5rem;"><strong>Autumn 2026 cohort</strong></p>
+      <p style="margin-bottom: 0;">Applications are not yet open. We'll announce the dates soon. In the meantime, here's what to expect.</p>
+    </div>
+
+    <h2>What we'll ask you</h2>
+    <p>The application takes about five minutes. Honest answers are more useful than impressive ones.</p>
+
+    <h3>About you</h3>
+    <p>Your name, email, where in the UK you're based, roughly how old you are, what you do for work, and what church or tradition shapes your faith.</p>
+
+    <h3>The decision</h3>
+    <p>Three questions:</p>
+    <ol>
+      <li><strong>What's the decision in front of you?</strong> One paragraph. The actual decision, not the polished version.</li>
+      <li><strong>Why is this decision in front of you now?</strong> What's changed? A trigger, a season ending, a question that won't go away?</li>
+      <li><strong>What would "good" look like at the end of eight weeks?</strong></li>
+    </ol>
+
+    <h3>Honest checks</h3>
+    <p>We'll ask whether you're currently exploring ordained ministry (if so, this isn't the right fit), whether you're in a personal crisis right now (we'd rather you got the right help first), and whether you can commit to all five sessions over eight weeks.</p>
+
+    <h2>What happens next</h2>
+    <ol>
+      <li>You apply.</li>
+      <li>Ben reads every application personally.</li>
+      <li>Within five working days: a yes, a "let's have a quick chat," or an honest no with a better pointer.</li>
+      <li>If accepted, you're matched with a mentor and introduced before the cohort starts.</li>
+    </ol>
+
+    <h2>Who gets in</h2>
+    <p>
+      Cohorts are small &mdash; 6 to 8 people. We're looking for a mix of sectors, ages, and traditions. The application isn't competitive; it's about fit. If the timing or shape isn't right for you, we'll say so kindly and invite you to a future cohort.
+    </p>
+
+    <h2>Before you apply</h2>
+    <p>
+      Please read the <a href="/principles">principles of engagement</a>. They're the conditions of taking part, not aspirations. The application form asks you to confirm you've read them.
+    </p>
+
+    <!--
+    <div class="cta-block">
+      <a href={APPLY_URL} class="btn" target="_blank" rel="noopener">Start your application</a>
+    </div>
+    -->
+
+    <div class="cta-block">
+      <p class="coming-soon">Applications open soon.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  ol {
+    padding-left: 1.5rem;
+    margin: 0.75rem 0 1rem;
+  }
+  ol li { margin-bottom: 0.5rem; }
+
+  .cta-block {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .coming-soon {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    font-style: italic;
+  }
+</style>
