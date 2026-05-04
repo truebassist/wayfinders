@@ -8,10 +8,10 @@ const APPLY_URL = "https://docs.google.com/forms/d/e/1FAIpQLSegkqZvXTR7PB1O6yYSM
   <div class="container">
     <h1>Apply</h1>
 
-    <div class="highlight-box">
-      <p style="margin-bottom: 0.5rem;"><strong>Autumn 2026 cohort</strong></p>
-      <p style="margin-bottom: 0;">Applications are open. Read what we'll ask below, then start your application at the bottom of the page.</p>
-    </div>
+    <aside class="highlight-box" aria-label="Cohort status">
+      <p class="highlight-heading"><strong>Autumn 2026 cohort</strong></p>
+      <p class="highlight-body">Applications are open. Read what we'll ask below, then start your application at the bottom of the page.</p>
+    </aside>
 
     <h2>What we'll ask you</h2>
     <p>The application takes about five minutes. Honest answers are more useful than impressive ones.</p>
@@ -49,7 +49,7 @@ const APPLY_URL = "https://docs.google.com/forms/d/e/1FAIpQLSegkqZvXTR7PB1O6yYSM
     </p>
 
     <div class="cta-block">
-      <a href={APPLY_URL} class="btn" target="_blank" rel="noopener">Start your application</a>
+      <a href={APPLY_URL} class="btn" target="_blank" rel="noopener">Start your application<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </div>
 </Base>
